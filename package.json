@@ -1,0 +1,41 @@
+{
+  "name": "product-search-api",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Felipe Videira",
+    "email": "videirafelipe020@gmail.com"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "jest",
+    "lint": "eslint app"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.20.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "express": "~4.16.1",
+    "express-joi-validation": "^4.0.4-beta.0",
+    "express-swagger-generator": "^1.1.17",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
+    }
+  }
+}
