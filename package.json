@@ -38,7 +38,7 @@
       "pre-push": "npm run lint && npm test"
     }
   },
-  "jest":  {
+  "jest": {
     "coverageProvider": "v8",
     "testEnvironment": "node",
     "testMatch": [
