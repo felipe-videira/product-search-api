@@ -1,0 +1,79 @@
+{
+    "results": [
+        {
+            "id": "MLA875110434",
+            "site_id": "MLA",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": 1699,
+            "currency_id": "ARS",
+            "sold_quantity": 50,
+            "condition": "new",
+            "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "shipping": {
+                "free_shipping": false
+            }
+        },
+        {
+            "id": "MLA875110434",
+            "site_id": "MLA",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": 1699,
+            "currency_id": "ARS",
+            "sold_quantity": 50,
+            "condition": "new",
+            "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "shipping": {
+                "free_shipping": false
+            }
+        },
+        {
+            "id": "MLA875110434",
+            "site_id": "MLA",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": 1699,
+            "currency_id": "ARS",
+            "sold_quantity": 50,
+            "condition": "new",
+            "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "shipping": {
+                "free_shipping": false
+            }
+        },
+        {
+            "id": "MLA875110434",
+            "site_id": "MLA",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": 1699,
+            "currency_id": "ARS",
+            "sold_quantity": 50,
+            "condition": "new",
+            "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "shipping": {
+                "free_shipping": false
+            }
+        }
+    ],
+    "filters": [
+        {
+            "id": "category",
+            "name": "Categorías",
+            "type": "text",
+            "values": [
+                {
+                    "id": "MLA409810",
+                    "name": "Audio",
+                    "path_from_root": [
+                        {
+                            "id": "MLA1000",
+                            "name": "Electrónica, Audio y Video"
+                        },
+                        {
+                            "id": "MLA409810",
+                            "name": "Audio"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

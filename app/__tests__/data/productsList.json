@@ -1,0 +1,60 @@
+{
+    "author": {
+        "name": "Felipe",
+        "lastname": "Videira"
+    },
+    "categories": [
+        "Electrónica, Audio y Video",
+        "Audio"
+    ],
+    "items": [
+        {
+            "id": "MLA875110434",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": {
+                "currency": "ARS",
+                "amount": 1699,
+                "decimals": 0
+            },
+            "picture": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "condition": "new",
+            "free_shipping": false
+        },
+        {
+            "id": "MLA875110434",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": {
+                "currency": "ARS",
+                "amount": 1699,
+                "decimals": 0
+            },
+            "picture": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "condition": "new",
+            "free_shipping": false
+        },
+        {
+            "id": "MLA875110434",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": {
+                "currency": "ARS",
+                "amount": 1699,
+                "decimals": 0
+            },
+            "picture": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "condition": "new",
+            "free_shipping": false
+        },
+        {
+            "id": "MLA875110434",
+            "title": "Auriculares Inalámbricos I12 Tws Blanco",
+            "price": {
+                "currency": "ARS",
+                "amount": 1699,
+                "decimals": 0
+            },
+            "picture": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
+            "condition": "new",
+            "free_shipping": false
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "author": {
+        "name": "Felipe",
+        "lastname": "Videira"
+    },
+    "item": {
+        "id": "MLA869200110",
+        "title": "iPhone 7 128 Gb Negro Brillante 2 Gb Ram",
+        "price": {
+            "currency": "ARS",
+            "amount": 98989,
+            "decimals": 0.99
+        },
+        "picture": "http://http2.mlstatic.com/D_636620-MLA31003091126_062019-I.jpg",
+        "condition": "new",
+        "free_shipping": true,
+        "sold_quantity": 0,
+        "description": "Más para ver\nCon su pantalla IPS de 4.7\", disfrutá de colores intensos y mayor nitidez en todos tus contenidos.\n\nGran capacidad de almacenamiento\nCon su memoria interna de 128 GB podrás almacenar archivos y aplicaciones de gran tamaño sin necesidad de subirlos a la nube. Disfrutá de tus contenidos favoritos en todo momento.\n\nMomentos únicos, capturas reales\nCapturá tus mejores momentos y revivilos cuando quieras con la cámara trasera de 12 Mpx.\n\n Además, el dispositivo cuenta con cámara frontal de 7 Mpx para que puedas sacarte divertidas selfies o hacer videollamadas.\n\nMáxima seguridad\nGracias al sensor de huella dactilar, tendrás acceso a tu teléfono de manera segura y podrás desbloquearlo automáticamente con solo un toque."
+    }
+}

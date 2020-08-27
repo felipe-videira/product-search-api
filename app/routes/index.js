@@ -7,9 +7,9 @@ const router = express.Router();
 
 /**
 * @route GET /items
-* @group Items - Product listing and details
+* @group Products - Product listing and details
 * @param {string} q.query.optional - eg: iphone
-* @returns {Array} 200 - An array of items
+* @returns {ProductListResponse.model} 200 - Products list
 * @returns {Error}  default - Unexpected error
 */
 router.get('/items', validator.query(
@@ -20,9 +20,9 @@ router.get('/items', validator.query(
 
 /**
 * @route GET /items/:id
-* @group Items - Product listing and details
+* @group Products - Product listing and details
 * @param {string} id.url.required - Item id
-* @returns {object} 200 - Item details
+* @returns {ProductDetailsResponse.model} 200 - Product details
 * @returns {Error}  default - Unexpected error
 */
 router.get('/items/:id', validator.params(
@@ -32,3 +32,51 @@ router.get('/items/:id', validator.params(
 ), controller.getProductById);
 
 module.exports = router;
+
+/**
+* @typedef ProductListResponse
+* @property {Author.model} author
+* @property {Array<string>} categories
+* @property {Array<Product>} items
+*/
+
+/**
+* @typedef ProductDetailsResponse
+* @property {Author.model} author
+* @property {ProductDetails.model} item
+*/
+
+/**
+* @typedef Author
+* @property {string} name
+* @property {string} lastname
+*/
+
+/**
+* @typedef Product
+* @property {string} id
+* @property {string} title
+* @property {Price.model} price
+* @property {string} picture
+* @property {string} condition
+* @property {boolean} free_shipping
+*/
+
+/**
+* @typedef ProductDetails
+* @property {string} id
+* @property {string} title
+* @property {Price.model} price
+* @property {string} picture
+* @property {string} condition
+* @property {boolean} free_shipping
+* @property {number} sold_quantity
+* @property {string} description
+*/
+
+/**
+* @typedef Price
+* @property {string} currency
+* @property {number} amount
+* @property {number} decimals
+*/
