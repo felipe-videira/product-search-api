@@ -11,6 +11,9 @@
             "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
             "shipping": {
                 "free_shipping": false
+            },
+            "address": {
+                "city_name": "Belgrano"
             }
         },
         {
@@ -24,6 +27,9 @@
             "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
             "shipping": {
                 "free_shipping": false
+            },
+            "address": {
+                "city_name": "Belgrano"
             }
         },
         {
@@ -37,6 +43,9 @@
             "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
             "shipping": {
                 "free_shipping": false
+            },
+            "address": {
+                "city_name": "Belgrano"
             }
         },
         {
@@ -50,6 +59,9 @@
             "thumbnail": "http://http2.mlstatic.com/D_894268-MLA43054861870_082020-I.jpg",
             "shipping": {
                 "free_shipping": false
+            },
+            "address": {
+                "city_name": "Belgrano"
             }
         }
     ],

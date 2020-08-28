@@ -60,8 +60,8 @@ module.exports = router;
 * @property {string} picture
 * @property {string} condition
 * @property {boolean} free_shipping
+* @property {string} city_name
 */
-
 /**
 * @typedef ProductDetails
 * @property {string} id
@@ -70,6 +70,7 @@ module.exports = router;
 * @property {string} picture
 * @property {string} condition
 * @property {boolean} free_shipping
+* @property {string} city_name
 * @property {number} sold_quantity
 * @property {string} description
 */

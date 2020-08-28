@@ -14,6 +14,7 @@ const parseProduct = (product) => ({
   condition: product.condition,
   free_shipping: product.shipping.free_shipping,
   sold_quantity: product.sold_quantity,
+  city_name: product.address.city_name,
 });
 
 module.exports.getProducts = async ({ q }) => {
@@ -23,7 +24,7 @@ module.exports.getProducts = async ({ q }) => {
     const { values: [categoryValues] } = data.filters.find((item) => item.id === 'category')
       || data.available_filters.find((item) => item.id === 'category');
 
-    const categories = categoryValues.path_from_root.map((item) => item.name);
+    const categories = ((categoryValues || {}).path_from_root || []).map((item) => item.name);
 
     const items = data.results.map((item) => {
       const { sold_quantity, ...product } = parseProduct(item);
