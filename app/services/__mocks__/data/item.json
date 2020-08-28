@@ -8,5 +8,8 @@
     "thumbnail": "http://http2.mlstatic.com/D_636620-MLA31003091126_062019-I.jpg",
     "shipping": {
         "free_shipping": true
+    },
+    "address": {
+        "city_name": "Belgrano"
     }
 }
