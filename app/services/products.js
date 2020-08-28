@@ -2,34 +2,39 @@
 const request = require('./request');
 const { getAuthor, getDecimals } = require('../utils');
 
-const parseProduct = (product) => ({
-  id: product.id,
-  title: product.title,
-  price: {
-    currency: product.currency_id,
-    amount: parseInt(product.price, 10),
-    decimals: getDecimals(product.price),
-  },
-  picture: product.thumbnail,
-  condition: product.condition,
-  free_shipping: product.shipping.free_shipping,
-  sold_quantity: product.sold_quantity,
-  city_name: product.address.city_name,
-});
-
 module.exports.getProducts = async ({ q }) => {
   try {
-    const data = await request('/sites/MLA/search', 'GET', { q, limit: 4 });
+    const { filters, available_filters, results } = await request('/sites/MLA/search', 'GET', { q, limit: 4 });
 
-    const { values: [categoryValues] } = data.filters.find((item) => item.id === 'category')
-      || data.available_filters.find((item) => item.id === 'category');
+    let categoryFilter = filters.find((item) => item.id === 'category');
 
-    const categories = ((categoryValues || {}).path_from_root || []).map((item) => item.name);
+    if (!categoryFilter) {
+      categoryFilter = available_filters.find((item) => item.id === 'category');
+    }
 
-    const items = data.results.map((item) => {
-      const { sold_quantity, ...product } = parseProduct(item);
-      return product;
-    });
+    let categories = [];
+
+    if (categoryFilter) {
+      const [mainCategory] = categoryFilter.values;
+
+      if (mainCategory && mainCategory.path_from_root) {
+        categories = mainCategory.path_from_root.map((item) => item.name);
+      }
+    }
+
+    const items = results.map((item) => ({
+      id: item.id,
+      title: item.title,
+      price: {
+        currency: item.currency_id,
+        amount: parseInt(item.price, 10),
+        decimals: getDecimals(item.price),
+      },
+      picture: item.thumbnail,
+      condition: item.condition,
+      free_shipping: item.shipping.free_shipping,
+      city_name: item.address.city_name,
+    }));
 
     return {
       author: getAuthor(),
@@ -44,17 +49,34 @@ module.exports.getProducts = async ({ q }) => {
 
 module.exports.getProductById = async ({ id }) => {
   try {
-    const [item, description] = await Promise.all([
+    const [details, description] = await Promise.all([
       request(`items/${id}`, 'GET'),
       request(`items/${id}/description`, 'GET'),
     ]);
 
+    const categoryData = await request(`categories/${details.category_id}`, 'GET');
+
+    const categories = categoryData.path_from_root.map((item) => item.name);
+
+    const item = {
+      id: details.id,
+      title: details.title,
+      price: {
+        currency: details.currency_id,
+        amount: parseInt(details.price, 10),
+        decimals: getDecimals(details.price),
+      },
+      picture: details.pictures[0].secure_url,
+      condition: details.condition,
+      free_shipping: details.shipping.free_shipping,
+      sold_quantity: details.sold_quantity,
+      description: description.plain_text,
+    };
+
     return {
       author: getAuthor(),
-      item: {
-        ...parseProduct(item),
-        description: description && description.plain_text,
-      },
+      item,
+      categories,
     };
   } catch (error) {
     console.log('productService.getProductById error:', error);

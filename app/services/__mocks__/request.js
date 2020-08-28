@@ -1,6 +1,7 @@
 const searchMock = require('./data/search.json');
 const itemMock = require('./data/item.json');
 const descriptionMock = require('./data/description.json');
+const categoriesMock = require('./data/categories.json');
 
 module.exports = jest.fn(async (path, method, dataOrParams) => {
   const getRequest = method.toUpperCase() === 'GET';
@@ -15,6 +16,10 @@ module.exports = jest.fn(async (path, method, dataOrParams) => {
     }
 
     return itemMock;
+  }
+
+  if (path.indexOf('categories') !== -1 && getRequest) {
+    return categoriesMock;
   }
 
   throw Error();

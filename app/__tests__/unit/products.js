@@ -2,6 +2,7 @@ const productsService = require('../../services/products');
 const requestMock = require('../../services/request');
 const productsListResponse = require('../data/productsList.json');
 const productDetailsResponse = require('../data/productDetails.json');
+const itemMock = require('../../services/__mocks__/data/item.json');
 
 jest.mock('../../services/request');
 
@@ -41,11 +42,13 @@ describe('Products Service', () => {
 
     const expectedRequestParamsCall1 = [`items/${paramsMock.id}`, 'GET'];
     const expectedRequestParamsCall2 = [`items/${paramsMock.id}/description`, 'GET'];
+    const expectedRequestParamsCall3 = [`categories/${itemMock.category_id}`, 'GET'];
 
     await productsService.getProductById(paramsMock);
 
     expect(requestMock).toHaveBeenNthCalledWith(1, ...expectedRequestParamsCall1);
     expect(requestMock).toHaveBeenNthCalledWith(2, ...expectedRequestParamsCall2);
+    expect(requestMock).toHaveBeenNthCalledWith(3, ...expectedRequestParamsCall3);
   });
 
   it('Should return the products list in the expected format', async () => {
